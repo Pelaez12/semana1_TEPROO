@@ -231,8 +231,21 @@ public class Ven extends JFrame implements ActionListener {
 
  
 	protected void do_btnBuscar_actionPerformed(ActionEvent e) {
+		BuscarporDni();
+	}
+	void BuscarporDni() {
+		Empleado encontrado = ae.Buscar(LeerDni());
+		if (encontrado != null) {
+			txtNom.setText(encontrado.getNom());
+			txtApe.setText(encontrado.getApe());
+			txtCorreo.setText(encontrado.getCorreo());
+			txtNum.setText(String.valueOf(encontrado.getNum()));
+			
+			Mensaje("Empleado encontrado con éxito");
+		} else {
+			Mensaje("No se encontró el DNI");
+		}
+		
 		
 	}
-	
-	
 }
