@@ -209,10 +209,22 @@ public class Ven extends JFrame implements ActionListener {
 		return Integer.parseInt(txtNum.getText());
 	}
 	protected void do_btnNewButton_actionPerformed(ActionEvent e) {
+		txtS.setText("");	
+		Listado();
+		Imprimir("la cantidad de empleados es: "+ae.Tamaño());
 		
 	}
-
 	
+	void Imprimir(String s) {
+		txtS.append(s+"\n");
+	}
+	void Listado() {
+		Imprimir("Nombre\tApellido\tDNI\tcorreo\tTelefono");
+		for (int i = 0; i < ae.Tamaño(); i++) {
+			Imprimir(""+ae.Obtener(i).getNom()+"\t"+ae.Obtener(i).getApe()+"\t"+ae.Obtener(i).getDni()+"\t"+ae.Obtener(i).getCorreo()+
+		    "\t"+ae.Obtener(i).getNum());
+		}
+	}
 	protected void do_btnQuitar_actionPerformed(ActionEvent e) {
 	
 	}
