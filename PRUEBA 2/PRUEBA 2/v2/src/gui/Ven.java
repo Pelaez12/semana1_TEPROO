@@ -165,8 +165,6 @@ public class Ven extends JFrame implements ActionListener {
 	private JLabel lblTelefono;
 	private JButton btnBuscar;
 	
-	
-	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnBuscar) {
 			do_btnBuscar_actionPerformed(e);
@@ -238,9 +236,6 @@ public class Ven extends JFrame implements ActionListener {
 	        Mensaje("No se encontró el DNI");
 	}
  }
-	
-
- 
 	protected void do_btnBuscar_actionPerformed(ActionEvent e) {
 		BuscarporDni();
 	}
