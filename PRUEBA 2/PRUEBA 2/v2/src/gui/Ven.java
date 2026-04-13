@@ -226,8 +226,19 @@ public class Ven extends JFrame implements ActionListener {
 		}
 	}
 	protected void do_btnQuitar_actionPerformed(ActionEvent e) {
-	
+		EliminarporDni();
 	}
+	void EliminarporDni() {
+		Empleado encontrando= ae.Buscar(LeerDni());
+		if (encontrando !=null) {
+			ae.Eliminar(encontrando);
+			Mensaje("Eliminado con éxito");
+		}
+		else {
+	        Mensaje("No se encontró el DNI");
+	}
+ }
+	
 
  
 	protected void do_btnBuscar_actionPerformed(ActionEvent e) {
