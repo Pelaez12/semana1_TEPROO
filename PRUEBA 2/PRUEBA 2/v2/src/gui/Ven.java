@@ -21,7 +21,6 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class Ven extends JFrame implements ActionListener {
-
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextArea txtS;
@@ -33,10 +32,6 @@ public class Ven extends JFrame implements ActionListener {
 	private JTextField txtApe;
 	private JTextField txtCorreo;
 	private JTextField txtNum;
-
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -49,10 +44,6 @@ public class Ven extends JFrame implements ActionListener {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
 	public Ven() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 561, 300);
@@ -119,31 +110,31 @@ public class Ven extends JFrame implements ActionListener {
 			txtNum.setColumns(10);
 		}
 		{
-			lblNombre = new JLabel("Nombre");
+			lblNombre = new JLabel("Nombre:");
 			lblNombre.setFont(new Font("Onyx", Font.BOLD, 22));
 			lblNombre.setBounds(10, 10, 56, 24);
 			contentPane.add(lblNombre);
 		}
 		{
-			lblDni = new JLabel("DNI");
+			lblDni = new JLabel("DNI:");
 			lblDni.setFont(new Font("Onyx", Font.BOLD, 23));
 			lblDni.setBounds(365, 2, 46, 43);
 			contentPane.add(lblDni);
 		}
 		{
-			lblApellido = new JLabel("APELLIDO");
+			lblApellido = new JLabel("APELLIDO:");
 			lblApellido.setFont(new Font("Onyx", Font.BOLD, 20));
 			lblApellido.setBounds(165, 8, 76, 37);
 			contentPane.add(lblApellido);
 		}
 		{
-			lblCorreo = new JLabel("CORREO");
+			lblCorreo = new JLabel("CORREO:");
 			lblCorreo.setFont(new Font("Onyx", Font.BOLD, 20));
 			lblCorreo.setBounds(265, 54, 46, 21);
 			contentPane.add(lblCorreo);
 		}
 		{
-			lblTelefono = new JLabel("TELEFONO");
+			lblTelefono = new JLabel("TELEFONO:");
 			lblTelefono.setFont(new Font("Onyx", Font.BOLD, 20));
 			lblTelefono.setBounds(10, 52, 76, 18);
 			contentPane.add(lblTelefono);
@@ -197,7 +188,6 @@ public class Ven extends JFrame implements ActionListener {
 			ae.Adicionar(es1);
 		}
 		else Mensaje("Existe");
-	
 	}
 	void Mensaje(String s) {
 		JOptionPane.showMessageDialog(this, s);
@@ -221,9 +211,7 @@ public class Ven extends JFrame implements ActionListener {
 		txtS.setText("");	
 		Listado();
 		Imprimir("la cantidad de empleados es: "+ae.Tamaño());
-		
 	}
-	
 	void Imprimir(String s) {
 		txtS.append(s+"\n");
 	}
@@ -262,14 +250,10 @@ public class Ven extends JFrame implements ActionListener {
 		} else {
 			Mensaje("No se encontró el DNI");
 		}
-		
-		
 	}
 	void ModificarEmpleado() {
 	    Empleado encontrado = ae.Buscar(LeerDni());
-
 	    if (encontrado != null) {
-
 	        encontrado.setNom(txtNom.getText());
 	        encontrado.setApe(txtApe.getText());
 	        encontrado.setCorreo(txtCorreo.getText());
