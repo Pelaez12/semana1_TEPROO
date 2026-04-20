@@ -181,6 +181,13 @@ public class Ven extends JFrame implements ActionListener {
 			do_btnAgregar_actionPerformed(e);
 		}
 	}
+	
+	//fix BOTONES
+	
+	
+	
+	
+	
 	protected void do_btnAgregar_actionPerformed(ActionEvent e) {
 		Empleado es=ae.Buscar(LeerDni());
 		if(es==null) {
