@@ -230,7 +230,7 @@ public class Ven extends JFrame implements ActionListener {
 	void Listado() {
 		Imprimir("Nombre\tApellido\tDNI\tcorreo\tTelefono");
 		for (int i = 0; i < ae.Tamaño(); i++) {
-			Imprimir(""+ae.Obtener(i).getNom()+"\t"+ae.Obtener(i).getApe()+"\t"+ae.Obtener(i).getDni()+"\t"+ae.Obtener(i).getCorreo()+
+			Imprimir(""+ae.Obtener(i).getNom()+"\t"+ae.Obtener(i).getApe()+"\t\t"+ae.Obtener(i).getDni()+"\t"+ae.Obtener(i).getCorreo()+
 		    "\t"+ae.Obtener(i).getNum());
 		}
 	}
@@ -275,7 +275,7 @@ public class Ven extends JFrame implements ActionListener {
 	        encontrado.setCorreo(txtCorreo.getText());
 	        encontrado.setNum(Integer.parseInt(txtNum.getText()));
 
-
+	    	
 	        Mensaje("Empleado modificado con éxito");
 	    } else {
 	        Mensaje("No se encontró el DNI para modificar");
