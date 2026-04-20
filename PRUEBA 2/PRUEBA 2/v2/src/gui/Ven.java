@@ -64,7 +64,7 @@ public class Ven extends JFrame implements ActionListener {
 		{
 			txtS = new JTextArea();
 			txtS.setFont(new Font("Monospaced", Font.BOLD, 14));
-			txtS.setBounds(10, 119, 527, 131);
+			txtS.setBounds(10, 153, 527, 97);
 			contentPane.add(txtS);
 		}
 		{
@@ -82,7 +82,7 @@ public class Ven extends JFrame implements ActionListener {
 			contentPane.add(btnAgregar);
 		}
 		{
-			btnQuitar = new JButton("QUITAR");
+			btnQuitar = new JButton("ELIMINAR");
 			btnQuitar.setFont(new Font("Tahoma", Font.BOLD, 10));
 			btnQuitar.addActionListener(this);
 			btnQuitar.setBounds(289, 86, 111, 23);
@@ -155,6 +155,13 @@ public class Ven extends JFrame implements ActionListener {
 			btnBuscar.setBounds(415, 86, 111, 23);
 			contentPane.add(btnBuscar);
 		}
+		{
+			btnQuitar_1 = new JButton("MODIFICAR");
+			btnQuitar_1.addActionListener(this);
+			btnQuitar_1.setFont(new Font("Tahoma", Font.BOLD, 10));
+			btnQuitar_1.setBounds(202, 119, 111, 23);
+			contentPane.add(btnQuitar_1);
+		}
 		Listado();
 	}
 	ArregloEmpleado ae= new ArregloEmpleado();
@@ -164,8 +171,12 @@ public class Ven extends JFrame implements ActionListener {
 	private JLabel lblCorreo;
 	private JLabel lblTelefono;
 	private JButton btnBuscar;
+	private JButton btnQuitar_1;
 	
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnQuitar_1) {
+			do_btnQuitar_1_actionPerformed(e);
+		}
 		if (e.getSource() == btnBuscar) {
 			do_btnBuscar_actionPerformed(e);
 		}
@@ -253,5 +264,24 @@ public class Ven extends JFrame implements ActionListener {
 		}
 		
 		
+	}
+	void ModificarEmpleado() {
+	    Empleado encontrado = ae.Buscar(LeerDni());
+
+	    if (encontrado != null) {
+
+	        encontrado.setNom(txtNom.getText());
+	        encontrado.setApe(txtApe.getText());
+	        encontrado.setCorreo(txtCorreo.getText());
+	        encontrado.setNum(Integer.parseInt(txtNum.getText()));
+
+
+	        Mensaje("Empleado modificado con éxito");
+	    } else {
+	        Mensaje("No se encontró el DNI para modificar");
+	    }
+	}
+	protected void do_btnQuitar_1_actionPerformed(ActionEvent e) {
+		ModificarEmpleado();
 	}
 }
