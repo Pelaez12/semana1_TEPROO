@@ -61,6 +61,11 @@ public class Empleado {
 			super();
 			this.ape = ape;
 		}
+		public Empleado(String correo, boolean tr) {
+			
+			this.correo = correo;
+		}
+		
 		
 		
 }
