@@ -52,4 +52,10 @@ public class Empleado {
 			this.dni = dni;
 		}
 		
+		public Empleado(String nom, int num) {
+			super();
+			this.nom = nom;
+			this.num = num;
+		}
+		
 }
