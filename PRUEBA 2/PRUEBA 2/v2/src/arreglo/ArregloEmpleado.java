@@ -30,4 +30,12 @@ public class ArregloEmpleado {
 	public void Eliminar(Empleado x) {
 		emple.remove(x);
 }
+	//sobrecarga de metodo Buscar
+		public Empleado Buscar(String nombre) {
+		    for (int i = 0; i < Tamaño(); i++) {
+		        if(Obtener(i).getNom().equalsIgnoreCase(nombre))
+		            return Obtener(i);
+		    }
+		    return null;
+		}
 }

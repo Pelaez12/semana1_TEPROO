@@ -7,7 +7,7 @@ public class Empleado {
 	private int dni;
 	private String correo;
 	public Empleado(String nom, String ape, int num, int dni, String correo) {
-		super();
+
 		this.nom = nom;
 		this.ape = ape;
 		this.num = num;
@@ -44,5 +44,12 @@ public class Empleado {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	
+	//sobrecarga de metodos
+		public Empleado(String nom, String ape, int dni) {
+
+			this.nom = nom;
+			this.ape = ape;
+			this.dni = dni;
+		}
+		
 }
