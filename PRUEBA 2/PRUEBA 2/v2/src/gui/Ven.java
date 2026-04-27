@@ -189,12 +189,23 @@ public class Ven extends JFrame implements ActionListener {
 	
 	
 	protected void do_btnAgregar_actionPerformed(ActionEvent e) {
-		Empleado es=ae.Buscar(LeerDni());
-		if(es==null) {
-			Empleado es1=new Empleado( LeerNombre(),LeerApellido(), LeerTele(), LeerDni(),LeerCorreo());
-			ae.Adicionar(es1);
+		String nombre = txtNom.getText();
+		String apellido = txtApe.getText();
+		String correo = txtCorreo.getText();
+
+
+		if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty()) {
+		    JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos.");
+		} else {
+
+		    Empleado empleadoExistente = ae.Buscar(LeerDni());
+		    if (empleadoExistente == null) {
+		        Empleado nuevoEmpleado = new Empleado(LeerNombre(), LeerApellido(), LeerTele(), LeerDni(), LeerCorreo());
+		        ae.Adicionar(nuevoEmpleado);
+		    } else {
+		        Mensaje("El empleado ya existe");
+		    }
 		}
-		else Mensaje("Existe");
 	}
 	void Mensaje(String s) {
 		JOptionPane.showMessageDialog(this, s);
