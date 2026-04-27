@@ -57,5 +57,10 @@ public class Empleado {
 			this.nom = nom;
 			this.num = num;
 		}
+		public Empleado(String ape) {
+			super();
+			this.ape = ape;
+		}
+		
 		
 }
